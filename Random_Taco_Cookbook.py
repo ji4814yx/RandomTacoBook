@@ -21,7 +21,7 @@ document.add_paragraph()
 document.add_paragraph()
 
 document.add_paragraph("Adade Gbadoe", "Heading 3") # to write my name with Heading 3 style
-
+# get the last paragraph, add the run to the last paragraph and use the run to add the break
 for paragraph in document.paragraphs:
     if 'Adade Gbadoe' in paragraph.text:
         run = paragraph.add_run()
