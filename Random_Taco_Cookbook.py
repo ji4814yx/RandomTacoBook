@@ -1,8 +1,27 @@
+'''
+This is Adade's big final project
+many lines of text
+to describe
+every little tiny detal that happens in this code
+i struggled with
+this part was easy
+
+'''
+
+'''
+Make sure i have all the librarires I need to use
+'''
 import docx # import this library to create and update a word document
 from docx.shared import Inches
 from docx.enum.text import WD_BREAK
 from docx.enum.text import WD_BREAK # source: stack overflow
 import requests
+
+
+
+'''
+I need to create a new word processing document that will have all the 
+'''
 document = docx.Document() # create a document
 
 document.add_heading("Random Taco Cookbook", 0) # add the heading Random Taco Cookbook
