@@ -9,39 +9,26 @@ document.add_heading("Random Taco Cookbook", 0) # add the heading Random Taco Co
 
 document.add_picture('Modified_Tai_Taco.jpg', width=Inches(6), height=Inches(4)) # add the resized taco image
 
-document.add_paragraph("Photo by Tai's Captures on Unsplash") # write the name of the image author
+document.add_paragraph() # add and empty paragraph after the picture
 
-document.add_paragraph()
+document.add_paragraph('Credits', 'Heading 3') # add Credits heading to provide the author of the image, the Url source
+# and the person who wrote the code to create the document (Adade Gbadoe)
 
-document.add_paragraph("Source: https://taco-1150.herokuapp.com/random/?full_taco=true") # to write the URL text
-document.add_paragraph()
-document.add_paragraph()
-document.add_paragraph()
-document.add_paragraph()
-document.add_paragraph()
-document.add_paragraph()
+document.add_paragraph('Taco image: Photo by Tai\'s Captures on Unsplash') # write the name of the image author
 
-document.add_paragraph("Adade Gbadoe", "Heading 3") # to write my name with Heading 3 style
+document.add_paragraph('Source: https://taco-1150.herokuapp.com/random/?full_taco=true') # to write the URL text
 
-# Bold the last paragraph: Adade Gbadoe
-last_paragraph = document.paragraphs[-1]
-last_run = last_paragraph.runs[-1]
-last_run.bold = True
-
-# get the last paragraph, add the run to the last paragraph and use the run to add the break
-for paragraph in document.paragraphs:
-    if 'Adade Gbadoe' in paragraph.text:
-        run = paragraph.add_run()
-        run.add_break(WD_BREAK.PAGE)
-#document.paragraphs[0].runs[0].add_break(docx.text.WD_BREAK.PAGE)
-
-# document.add_heading("First Taco Recipe", 0) # add the heading for the First Taco Recipe
+# define the paragraph('Code by: Adade Gbadoe') and insert a page break after: thi s will avoid a repetition of
+#('Code by: Adade Gbadoe') that will occur if we code: document.add_paragraph('Code by: Adade Gbadoe') before the actual
+# paragraph = document.add_paragraph('Code by: Adade Gbadoe')
+paragraph = document.add_paragraph('Code by: Adade Gbadoe')
+run = paragraph.add_run()
+run.add_break(WD_BREAK.PAGE)
 
 # working with Brian
 
-
 url = 'https://taco-1150.herokuapp.com/random/?full_taco=true' # this will give one random recipe
-
+# this for loop to pull out each random taco recipe
 for i in range(3):
     if i == 0:
         document.add_heading("First Taco Recipe", 0)
