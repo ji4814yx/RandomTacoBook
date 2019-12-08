@@ -109,7 +109,7 @@ for i in range(3):
     document.add_paragraph(base_layer)
 
     document.add_paragraph(shell_name, 'Heading 3')
-    paragraph = document.add_paragraph(shell) # use this paragraph as reference to add a page break after each taco recipe
+    paragraph = document.add_paragraph(shell) # use this paragraph as reference to add a page break after each random taco recipe
     run = paragraph.add_run()
     run.add_break(WD_BREAK.PAGE)
 
