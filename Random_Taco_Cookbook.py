@@ -1,11 +1,18 @@
 '''
-This is Adade's big final project
+This is Adade's big final project where I have to write a code to create a Random Taco Recipe Book in a new word
+processing document with different pages.
+I struggled while writing my code because I wanted to get things write and this is part of my work as a "coder". But
+I think, there is always someone who will code better than you.  This is not a reason to give up on your code
+especially as Brian's student.  sorry for my "bla bla bla"!
+Thanks for taking your time to read my introduction
+Let's go in the details of my code.
+.
+
 many lines of text
 to describe
 every little tiny detal that happens in this code
 i struggled with
 this part was easy
-
 '''
 
 '''
