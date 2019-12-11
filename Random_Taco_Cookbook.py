@@ -10,7 +10,7 @@ Let's go in the details of my code.
 
 many lines of text
 to describe
-every little tiny detal that happens in this code
+every little tiny detail that happens in this code
 i struggled with
 this part was easy
 '''
@@ -19,10 +19,10 @@ this part was easy
 Make sure i have all the librarires I need to use
 '''
 import docx # import this library to create and update a word document
-from docx.shared import Inches
+from docx.shared import Inches # this import allows to get the inches for the width and the height of the picture
 from docx.enum.text import WD_BREAK
 from docx.enum.text import WD_BREAK # source: stack overflow
-import requests
+import requests # to get the url
 
 
 
@@ -59,22 +59,20 @@ paragraph = document.add_paragraph('Code by: Adade Gbadoe') as a reference  befo
 I have to get rid of: document.add_paragraph('Code by: Adade Gbadoe') in order to avoid the repetition of 
 'Code by: Adade Gbadoe' before the following code'''
 
-paragraph = document.add_paragraph('Code by: Adade Gbadoe','List Bullet') # add the last paragraph and use it as reference
-run = paragraph.add_run()
+paragraph = document.add_paragraph('Code by: Adade Gbadoe', 'List Bullet') # add the last paragraph and use it as reference
+run = paragraph.add_run() # add run to be able to add the page break
 run.add_break(WD_BREAK.PAGE) # add the page break
 
 # working with Brian
 
 url = 'https://taco-1150.herokuapp.com/random/?full_taco=true' # this will give a random recipe for the Tai Taco
-
+random_taco_title = ['First', 'Second', 'Third'] # define this variable for first, second and third taco recipe
 # this for loop to pull out each random taco recipe
-for i in range(3):
-    if i == 0:
-        document.add_heading("First Taco Recipe", 0)
-    if i == 1:
-        document.add_heading("Second Taco Recipe", 0)
-    if i == 2:
-        document.add_heading("Third Taco Recipe", 0)
+for i in range(3): # for any random taco recipe in the range(3). range (3) = [0,1,2]
+    document.add_heading(f'{random_taco_title[i]} Taco Recipe', 0) # add the heading on each random taco recipe:
+    # First Taco Recipe
+    # Second Taco Recipe
+    # Third Taco Recipe
 
     response = requests.get(url).json() # provides a dictionary containing a taco recipe. For the next program
 
@@ -98,22 +96,23 @@ for i in range(3):
 
 #Add the name of each component of the taco  with 'Heading' style 3
 
-    document.add_paragraph(seasoning_name, 'Heading 3')
-    document.add_paragraph(seasoning)
+    document.add_paragraph(seasoning_name, 'Heading 3') # add the name of the seasoning in heading style 3
+    document.add_paragraph(seasoning) # add the seasoning paragraph
 
-    document.add_paragraph(condiment_name, 'Heading 3')
-    document.add_paragraph(condiment)
+    document.add_paragraph(condiment_name, 'Heading 3')# add the name of the condiment in heading style 3
+    document.add_paragraph(condiment)# add the condiment paragraph
 
-    document.add_paragraph(mixin_name, 'Heading 3')
-    document.add_paragraph(mixin)
+    document.add_paragraph(mixin_name, 'Heading 3')# add the name of the mixin in heading style 3
+    document.add_paragraph(mixin) # add the mixin paragraph
 
-    document.add_paragraph(base_layer_name, 'Heading 3')
-    document.add_paragraph(base_layer)
+    document.add_paragraph(base_layer_name, 'Heading 3') # add the name of the base-layer in heading style 3
+    document.add_paragraph(base_layer) # add the base-layer paragraph
 
-    document.add_paragraph(shell_name, 'Heading 3')
-    paragraph = document.add_paragraph(shell) # use this paragraph as reference to add a page break after each random taco recipe
-    run = paragraph.add_run()
-    run.add_break(WD_BREAK.PAGE)
+    document.add_paragraph(shell_name, 'Heading 3') # add the name of the shell in heading style 3
+    paragraph = document.add_paragraph(shell) # add the shell paragraph and
+    # use this paragraph as reference to add a page break after each random taco recipe
+    run = paragraph.add_run() # add run to be able to add the page break
+    run.add_break(WD_BREAK.PAGE) # insert the page break
 
 
 document.save('First_Page.docx') # save the world document created
