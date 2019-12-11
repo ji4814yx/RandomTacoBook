@@ -42,9 +42,11 @@ document.add_paragraph() # add and empty paragraph after the picture to space ou
 document.add_paragraph('Credits', 'Heading 3') # add Credits heading to provide the author of the image, the Url source
 # and the person who wrote the code to create the document (Adade Gbadoe)
 
-document.add_paragraph('Taco image: Photo by Tai\'s Captures on Unsplash') # add the name of the image author
+document.add_paragraph('Taco image: Photo by Tai\'s Captures on Unsplash', 'List Bullet') # add the name of
+# the image author and add bullet point before ' Taco image: Photo by Tai\'s Captures on Unsplash'
 
-document.add_paragraph('Source: https://taco-1150.herokuapp.com/random/?full_taco=true') # add the URL text
+document.add_paragraph('Source: https://taco-1150.herokuapp.com/random/?full_taco=true', 'List Bullet') # add the URL text
+# and add bullet point before this paragraph
 
 ''''I struggled with the following part. To insert the page break after 'Code by: Adade Gbadoe',I first coded:
 document.add_paragraph('Code by: Adade Gbadoe')
@@ -57,7 +59,7 @@ paragraph = document.add_paragraph('Code by: Adade Gbadoe') as a reference  befo
 I have to get rid of: document.add_paragraph('Code by: Adade Gbadoe') in order to avoid the repetition of 
 'Code by: Adade Gbadoe' before the following code'''
 
-paragraph = document.add_paragraph('Code by: Adade Gbadoe') # add the last paragraph and use it as reference
+paragraph = document.add_paragraph('Code by: Adade Gbadoe','List Bullet') # add the last paragraph and use it as reference
 run = paragraph.add_run()
 run.add_break(WD_BREAK.PAGE) # add the page break
 
